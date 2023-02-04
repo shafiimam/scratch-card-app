@@ -14064,7 +14064,7 @@
             for (r.method = o, r.arg = a; ; ) {
               var i = r.delegate;
               if (i) {
-                var c = L(i, r);
+                var c = C(i, r);
                 if (c) {
                   if (c === h) continue;
                   return c;
@@ -14089,7 +14089,7 @@
             }
           };
         }
-        function L(t, e) {
+        function C(t, e) {
           var r = e.method,
             n = t.iterator[r];
           if (void 0 === n)
@@ -14099,7 +14099,7 @@
                 t.iterator.return &&
                 ((e.method = "return"),
                 (e.arg = void 0),
-                L(t, e),
+                C(t, e),
                 "throw" === e.method)) ||
                 ("return" !== r &&
                   ((e.method = "throw"),
@@ -14128,7 +14128,7 @@
               (e.delegate = null),
               h);
         }
-        function C(t) {
+        function L(t) {
           var e = { tryLoc: t[0] };
           1 in t && (e.catchLoc = t[1]),
             2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])),
@@ -14140,7 +14140,7 @@
         }
         function O(t) {
           (this.tryEntries = [{ tryLoc: "root" }]),
-            t.forEach(C, this),
+            t.forEach(L, this),
             this.reset(!0);
         }
         function _(t) {
@@ -14423,9 +14423,12 @@
           });
       }),
         (window.onload = function () {
-          d ||
-            (console.log("load event not fired! firing now====>>>"),
-            dispatchEvent("DOMContentLoaded"));
+          if (!d) {
+            console.log("load event not fired! firing now====>>>"),
+              console.log("======= INIT :: SCRATCH-CARD-APP =======");
+            var t = new Event("DOMContentLoaded");
+            dispatchEvent(t);
+          }
         });
     },
   },
