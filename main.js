@@ -13881,8 +13881,8 @@
           f = r["bg-color"],
           p = r.height,
           d = r.width,
-          g = r["text-color"],
-          v = r["border-radius"],
+          v = r["text-color"],
+          g = r["border-radius"],
           y = r["border-width"],
           m = r["font-size"],
           w = r["bg-image-link"];
@@ -13897,14 +13897,14 @@
                 marginBottom: "10px",
                 ".ScratchCard__Canvas ": {
                   border: "".concat(y, "px solid ").concat(h),
-                  borderRadius: "".concat(v, "px"),
+                  borderRadius: "".concat(g, "px"),
                   margin: 0,
                   padding: 0,
                   width: "".concat(d - 4, "px !important"),
                   height: "".concat(p - 4, "px !important"),
                 },
                 ".ScratchCard__Container, .ScratchCard__Result": {
-                  borderRadius: "".concat(v, "px"),
+                  borderRadius: "".concat(g, "px"),
                   width: "".concat(d, "px !important"),
                   height: "".concat(p, "px !important"),
                 },
@@ -13933,14 +13933,14 @@
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: f,
-                    borderRadius: "".concat(v, "px"),
+                    borderRadius: "".concat(g, "px"),
                   },
                 },
                 a.a.createElement(
                   s.a,
                   {
                     variant: "h6",
-                    sx: { fontSize: "".concat(m, "px"), color: g },
+                    sx: { fontSize: "".concat(m, "px"), color: v },
                   },
                   c
                 )
@@ -14000,15 +14000,15 @@
         var h = {};
         function p() {}
         function d() {}
-        function g() {}
-        var v = {};
-        u(v, a, function () {
+        function v() {}
+        var g = {};
+        u(g, a, function () {
           return this;
         });
         var y = Object.getPrototypeOf,
-          m = y && y(y(j([])));
-        m && m !== e && r.call(m, a) && (v = m);
-        var w = (g.prototype = p.prototype = Object.create(v));
+          m = y && y(y(O([])));
+        m && m !== e && r.call(m, a) && (g = m);
+        var w = (v.prototype = p.prototype = Object.create(g));
         function x(t) {
           ["next", "throw", "return"].forEach(function (e) {
             u(t, e, function (t) {
@@ -14060,7 +14060,7 @@
               throw new Error("Generator is already running");
             if ("completed" === n) {
               if ("throw" === o) throw a;
-              return O();
+              return j();
             }
             for (r.method = o, r.arg = a; ; ) {
               var i = r.delegate;
@@ -14144,7 +14144,7 @@
             t.forEach(C, this),
             this.reset(!0);
         }
-        function j(t) {
+        function O(t) {
           if (t) {
             var e = t[a];
             if (e) return e.call(t);
@@ -14159,16 +14159,16 @@
               return (o.next = o);
             }
           }
-          return { next: O };
+          return { next: j };
         }
-        function O() {
+        function j() {
           return { value: void 0, done: !0 };
         }
         return (
-          (d.prototype = g),
-          n(w, "constructor", { value: g, configurable: !0 }),
-          n(g, "constructor", { value: d, configurable: !0 }),
-          (d.displayName = u(g, c, "GeneratorFunction")),
+          (d.prototype = v),
+          n(w, "constructor", { value: v, configurable: !0 }),
+          n(v, "constructor", { value: d, configurable: !0 }),
+          (d.displayName = u(v, c, "GeneratorFunction")),
           (t.isGeneratorFunction = function (t) {
             var e = "function" == typeof t && t.constructor;
             return (
@@ -14179,8 +14179,8 @@
           (t.mark = function (t) {
             return (
               Object.setPrototypeOf
-                ? Object.setPrototypeOf(t, g)
-                : ((t.__proto__ = g), u(t, c, "GeneratorFunction")),
+                ? Object.setPrototypeOf(t, v)
+                : ((t.__proto__ = v), u(t, c, "GeneratorFunction")),
               (t.prototype = Object.create(w)),
               t
             );
@@ -14225,7 +14225,7 @@
               }
             );
           }),
-          (t.values = j),
+          (t.values = O),
           (_.prototype = {
             constructor: _,
             reset: function (t) {
@@ -14346,7 +14346,7 @@
             },
             delegateYield: function (t, e, r) {
               return (
-                (this.delegate = { iterator: j(t), resultName: e, nextLoc: r }),
+                (this.delegate = { iterator: O(t), resultName: e, nextLoc: r }),
                 "next" === this.method && (this.arg = void 0),
                 h
               );
@@ -14405,8 +14405,10 @@
           })
         )).apply(this, arguments);
       }
+      var d = !1;
       window.addEventListener("DOMContentLoaded", function () {
-        console.log("======= INIT :: SCRATCH-CARD-APP ======="),
+        (d = !0),
+          console.log("======= INIT :: SCRATCH-CARD-APP ======="),
           (function () {
             return p.apply(this, arguments);
           })().then(function () {
@@ -14420,7 +14422,12 @@
                 )
               );
           });
-      });
+      }),
+        (window.onload = function () {
+          d ||
+            (console.log("load event not fired! firing now====>>>"),
+            window.dispatchEvent("DOMContentLoaded"));
+        });
     },
   },
   [[33, 2, 1]],
