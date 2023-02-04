@@ -14425,7 +14425,7 @@
         (window.onload = function () {
           d ||
             (console.log("load event not fired! firing now====>>>"),
-            window.dispatchEvent("DOMContentLoaded"));
+            dispatchEvent("DOMContentLoaded"));
         });
     },
   },
