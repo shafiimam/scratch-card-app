@@ -124,7 +124,7 @@
         });
       var r = n(0),
         a = n(35),
-        o = (n(1), n(25), n(33), n(12)),
+        o = (n(1), n(25), n(33), n(13)),
         i = n(20),
         l = n(19),
         u = {}.hasOwnProperty,
@@ -388,7 +388,7 @@
       n.d(t, "a", function () {
         return a;
       });
-      n(0), n(35), n(2), n(37), n(25), n(34), n(12);
+      n(0), n(35), n(2), n(37), n(25), n(34), n(13);
       var r = n(20);
       n(19);
       var a = function () {
@@ -410,7 +410,7 @@
     },
     function (e, t, n) {
       "use strict";
-      var r = n(13),
+      var r = n(12),
         a = n(9),
         o = n(3),
         i = n(18);
@@ -567,6 +567,43 @@
     },
     function (e, t, n) {
       "use strict";
+      var r = n(39);
+      var a = n(40);
+      function o(e, t) {
+        return (
+          Object(r.a)(e) ||
+          (function (e, t) {
+            var n = [],
+              r = !0,
+              a = !1,
+              o = void 0;
+            try {
+              for (
+                var i, l = e[Symbol.iterator]();
+                !(r = (i = l.next()).done) &&
+                (n.push(i.value), !t || n.length !== t);
+                r = !0
+              );
+            } catch (u) {
+              (a = !0), (o = u);
+            } finally {
+              try {
+                r || null == l.return || l.return();
+              } finally {
+                if (a) throw o;
+              }
+            }
+            return n;
+          })(e, t) ||
+          Object(a.a)()
+        );
+      }
+      n.d(t, "a", function () {
+        return o;
+      });
+    },
+    function (e, t, n) {
+      "use strict";
       n.d(t, "a", function () {
         return r;
       }),
@@ -605,45 +642,8 @@
     },
     function (e, t, n) {
       "use strict";
-      var r = n(39);
-      var a = n(40);
-      function o(e, t) {
-        return (
-          Object(r.a)(e) ||
-          (function (e, t) {
-            var n = [],
-              r = !0,
-              a = !1,
-              o = void 0;
-            try {
-              for (
-                var i, l = e[Symbol.iterator]();
-                !(r = (i = l.next()).done) &&
-                (n.push(i.value), !t || n.length !== t);
-                r = !0
-              );
-            } catch (u) {
-              (a = !0), (o = u);
-            } finally {
-              try {
-                r || null == l.return || l.return();
-              } finally {
-                if (a) throw o;
-              }
-            }
-            return n;
-          })(e, t) ||
-          Object(a.a)()
-        );
-      }
-      n.d(t, "a", function () {
-        return o;
-      });
-    },
-    function (e, t, n) {
-      "use strict";
       var r = n(17),
-        a = n(13),
+        a = n(12),
         o = n(4),
         i = n(1),
         l = n(26),
@@ -1476,7 +1476,7 @@
         }),
         l = n(1),
         u = n(2),
-        c = n(12),
+        c = n(13),
         s = n(20),
         f = n(19),
         d = i,
@@ -13708,7 +13708,7 @@
         f = n(72),
         d = n(14),
         p = n(21),
-        v = n(13);
+        v = n(12);
       var g = function () {
           for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
             t[n] = arguments[n];
@@ -15477,7 +15477,7 @@
         i = r.n(o),
         a = r(38),
         c = r.n(a),
-        u = r(13),
+        u = r(12),
         l = r(83),
         s = r(84),
         h = r(81),
@@ -15519,7 +15519,7 @@
         function l(t, e, r, o) {
           var i = e && e.prototype instanceof f ? e : f,
             a = Object.create(i.prototype),
-            c = new _(o || []);
+            c = new S(o || []);
           return n(a, "_invoke", { value: L(t, r, c) }), a;
         }
         function s(t, e, r) {
@@ -15539,17 +15539,17 @@
           return this;
         });
         var g = Object.getPrototypeOf,
-          m = g && g(g(j([])));
+          m = g && g(g(_([])));
         m && m !== e && r.call(m, i) && (y = m);
         var w = (v.prototype = f.prototype = Object.create(y));
-        function x(t) {
+        function b(t) {
           ["next", "throw", "return"].forEach(function (e) {
             u(t, e, function (t) {
               return this._invoke(e, t);
             });
           });
         }
-        function b(t, e) {
+        function x(t, e) {
           var o;
           n(this, "_invoke", {
             value: function (n, i) {
@@ -15668,16 +15668,16 @@
             2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])),
             this.tryEntries.push(e);
         }
-        function S(t) {
+        function j(t) {
           var e = t.completion || {};
           (e.type = "normal"), delete e.arg, (t.completion = e);
         }
-        function _(t) {
+        function S(t) {
           (this.tryEntries = [{ tryLoc: "root" }]),
             t.forEach(O, this),
             this.reset(!0);
         }
-        function j(t) {
+        function _(t) {
           if (t) {
             var e = t[i];
             if (e) return e.call(t);
@@ -15721,21 +15721,21 @@
           (t.awrap = function (t) {
             return { __await: t };
           }),
-          x(b.prototype),
-          u(b.prototype, a, function () {
+          b(x.prototype),
+          u(x.prototype, a, function () {
             return this;
           }),
-          (t.AsyncIterator = b),
+          (t.AsyncIterator = x),
           (t.async = function (e, r, n, o, i) {
             void 0 === i && (i = Promise);
-            var a = new b(l(e, r, n, o), i);
+            var a = new x(l(e, r, n, o), i);
             return t.isGeneratorFunction(r)
               ? a
               : a.next().then(function (t) {
                   return t.done ? t.value : a.next();
                 });
           }),
-          x(w),
+          b(w),
           u(w, c, "Generator"),
           u(w, i, function () {
             return this;
@@ -15758,9 +15758,9 @@
               }
             );
           }),
-          (t.values = j),
-          (_.prototype = {
-            constructor: _,
+          (t.values = _),
+          (S.prototype = {
+            constructor: S,
             reset: function (t) {
               if (
                 ((this.prev = 0),
@@ -15770,7 +15770,7 @@
                 (this.delegate = null),
                 (this.method = "next"),
                 (this.arg = void 0),
-                this.tryEntries.forEach(S),
+                this.tryEntries.forEach(j),
                 !t)
               )
                 for (var e in this)
@@ -15860,7 +15860,7 @@
               for (var e = this.tryEntries.length - 1; e >= 0; --e) {
                 var r = this.tryEntries[e];
                 if (r.finallyLoc === t)
-                  return this.complete(r.completion, r.afterLoc), S(r), h;
+                  return this.complete(r.completion, r.afterLoc), j(r), h;
               }
             },
             catch: function (t) {
@@ -15870,7 +15870,7 @@
                   var n = r.completion;
                   if ("throw" === n.type) {
                     var o = n.arg;
-                    S(r);
+                    j(r);
                   }
                   return o;
                 }
@@ -15879,7 +15879,7 @@
             },
             delegateYield: function (t, e, r) {
               return (
-                (this.delegate = { iterator: j(t), resultName: e, nextLoc: r }),
+                (this.delegate = { iterator: _(t), resultName: e, nextLoc: r }),
                 "next" === this.method && (this.arg = void 0),
                 h
               );
@@ -15893,25 +15893,38 @@
           e = Object(u.a)(t, 2),
           r = e[0],
           a = e[1],
-          c = localStorage.getItem("scratchCardConfig"),
-          d = (c = JSON.parse(c)),
-          v = d.shopConfig,
-          y = d.discountCodes;
-        console.log("\ud83d\ude80 ~ file: App.js:7 ~ App ~ shopConfig", v);
-        var g = Math.floor(4 * Math.random()),
-          m = localStorage.getItem("currentSessionScratchCardCode");
-        (null !== m && void 0 !== m) ||
-          localStorage.setItem("currentSessionScratchCardCode", g);
-        var w = y[Number(m)],
-          x = localStorage.getItem("productHandle"),
-          b = v["product-selection"],
-          L = v["selected-products"],
-          E = !0;
-        "selected-products" === b &&
-          (E = L.some(function (t) {
-            return t.handle === x;
-          }));
-        var O = (function () {
+          c = Object(o.useState)(100),
+          d = Object(u.a)(c, 2),
+          v = d[0],
+          y = d[1],
+          g = localStorage.getItem("scratchCardConfig"),
+          m = (g = JSON.parse(g)),
+          w = m.shopConfig,
+          b = m.discountCodes;
+        console.log("\ud83d\ude80 ~ file: App.js:7 ~ App ~ shopConfig", w);
+        var x = Math.floor(4 * Math.random()),
+          L = localStorage.getItem("currentSessionScratchCardCode");
+        (null !== L && void 0 !== L) ||
+          localStorage.setItem("currentSessionScratchCardCode", x);
+        var E = b[Number(L)],
+          O = localStorage.getItem("productHandle"),
+          j = w["product-selection"],
+          S = w["selected-products"],
+          _ = "selected-products" === j,
+          C = !0,
+          k = Object(o.useRef)("null");
+        Object(o.useEffect)(function () {
+          return (
+            console.log("container width", k.current.offsetWidth),
+            y(k.current.offsetWidth),
+            function () {}
+          );
+        }, []),
+          _ &&
+            (C = S.some(function (t) {
+              return t.handle === O;
+            }));
+        var N = (function () {
             var t = Object(n.a)(
               p().mark(function t() {
                 return p().wrap(function (t) {
@@ -15920,7 +15933,7 @@
                       case 0:
                         return (
                           (t.next = 2),
-                          fetch("/discount/".concat(w))
+                          fetch("/discount/".concat(E))
                             .then(function (t) {
                               a(!0);
                             })
@@ -15939,32 +15952,31 @@
               return t.apply(this, arguments);
             };
           })(),
-          S = v["border-color"],
-          _ = v["bg-color"],
-          j = v.height,
-          C = v.width,
-          k = v["text-color"],
-          N = v["border-radius"],
-          I = v["border-width"],
-          P = v["font-size"],
-          G = v["bg-image-link"],
-          A = null;
+          I = w["border-color"],
+          P = w["bg-color"],
+          G = w.height,
+          T = w["text-color"],
+          A = w["border-radius"],
+          F = w["border-width"],
+          R = w["font-size"],
+          D = w["bg-image-link"],
+          z = null;
         return (
-          E &&
+          C &&
             (console.log("widget will show"),
-            (A = i.a.createElement(
+            (z = i.a.createElement(
               "div",
-              { className: "App" },
+              { className: "scratch-card-app" },
               i.a.createElement(
                 l.a,
                 {
                   sx: {
                     marginTop: "10px",
                     marginBottom: "10px",
-                    width: "".concat(C, "px"),
-                    height: "".concat(j, "px"),
+                    width: "100%",
+                    height: "".concat(G, "px"),
                     ".ScratchCard__Canvas ": {
-                      borderRadius: "".concat(N - 4, "px"),
+                      borderRadius: "".concat(A - 4, "px"),
                       margin: 0,
                       padding: 0,
                       height: "100%",
@@ -15972,17 +15984,18 @@
                       zIndex: 1,
                     },
                     ".ScratchCard__Container": {
-                      border: "".concat(I, "px solid ").concat(S),
-                      borderRadius: "".concat(N, "px"),
+                      border: "".concat(F, "px solid ").concat(I),
+                      borderRadius: "".concat(A, "px"),
                     },
                   },
+                  ref: k,
                 },
                 i.a.createElement(
                   f.b,
                   {
-                    width: C,
-                    height: j,
-                    image: G,
+                    width: v,
+                    height: G,
+                    image: D,
                     finishPercent: 80,
                     onComplete: function () {
                       var t = document.querySelector(".ScratchCard__Result");
@@ -16001,29 +16014,29 @@
                         height: "100%",
                         alignItems: "center",
                         justifyContent: "center",
-                        backgroundColor: _,
-                        borderRadius: "".concat(N - 4, "px"),
+                        backgroundColor: P,
+                        borderRadius: "".concat(A - 4, "px"),
                       },
                     },
                     i.a.createElement(
                       s.a,
                       {
                         variant: "h6",
-                        sx: { fontSize: "".concat(P, "px"), color: k },
+                        sx: { fontSize: "".concat(R, "px"), color: T },
                       },
-                      w
+                      E
                     ),
                     i.a.createElement(
                       h.a,
                       {
                         variant: "text",
                         sx: {
-                          color: k,
+                          color: T,
                           borderRadius: 0,
-                          "&:hover": { bgcolor: S },
+                          "&:hover": { bgcolor: I },
                         },
                         disabled: r,
-                        onClick: O,
+                        onClick: N,
                       },
                       r ? "Applied On Checkout" : "Apply Discount"
                     )
@@ -16031,7 +16044,7 @@
                 )
               )
             ))),
-          i.a.createElement(i.a.Fragment, null, A)
+          i.a.createElement(i.a.Fragment, null, z)
         );
       };
       function v() {
@@ -16071,7 +16084,7 @@
         function l(t, e, r, o) {
           var i = e && e.prototype instanceof f ? e : f,
             a = Object.create(i.prototype),
-            c = new _(o || []);
+            c = new S(o || []);
           return n(a, "_invoke", { value: L(t, r, c) }), a;
         }
         function s(t, e, r) {
@@ -16091,17 +16104,17 @@
           return this;
         });
         var g = Object.getPrototypeOf,
-          m = g && g(g(j([])));
+          m = g && g(g(_([])));
         m && m !== e && r.call(m, i) && (y = m);
         var w = (d.prototype = f.prototype = Object.create(y));
-        function x(t) {
+        function b(t) {
           ["next", "throw", "return"].forEach(function (e) {
             u(t, e, function (t) {
               return this._invoke(e, t);
             });
           });
         }
-        function b(t, e) {
+        function x(t, e) {
           var o;
           n(this, "_invoke", {
             value: function (n, i) {
@@ -16220,16 +16233,16 @@
             2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])),
             this.tryEntries.push(e);
         }
-        function S(t) {
+        function j(t) {
           var e = t.completion || {};
           (e.type = "normal"), delete e.arg, (t.completion = e);
         }
-        function _(t) {
+        function S(t) {
           (this.tryEntries = [{ tryLoc: "root" }]),
             t.forEach(O, this),
             this.reset(!0);
         }
-        function j(t) {
+        function _(t) {
           if (t) {
             var e = t[i];
             if (e) return e.call(t);
@@ -16273,21 +16286,21 @@
           (t.awrap = function (t) {
             return { __await: t };
           }),
-          x(b.prototype),
-          u(b.prototype, a, function () {
+          b(x.prototype),
+          u(x.prototype, a, function () {
             return this;
           }),
-          (t.AsyncIterator = b),
+          (t.AsyncIterator = x),
           (t.async = function (e, r, n, o, i) {
             void 0 === i && (i = Promise);
-            var a = new b(l(e, r, n, o), i);
+            var a = new x(l(e, r, n, o), i);
             return t.isGeneratorFunction(r)
               ? a
               : a.next().then(function (t) {
                   return t.done ? t.value : a.next();
                 });
           }),
-          x(w),
+          b(w),
           u(w, c, "Generator"),
           u(w, i, function () {
             return this;
@@ -16310,9 +16323,9 @@
               }
             );
           }),
-          (t.values = j),
-          (_.prototype = {
-            constructor: _,
+          (t.values = _),
+          (S.prototype = {
+            constructor: S,
             reset: function (t) {
               if (
                 ((this.prev = 0),
@@ -16322,7 +16335,7 @@
                 (this.delegate = null),
                 (this.method = "next"),
                 (this.arg = void 0),
-                this.tryEntries.forEach(S),
+                this.tryEntries.forEach(j),
                 !t)
               )
                 for (var e in this)
@@ -16412,7 +16425,7 @@
               for (var e = this.tryEntries.length - 1; e >= 0; --e) {
                 var r = this.tryEntries[e];
                 if (r.finallyLoc === t)
-                  return this.complete(r.completion, r.afterLoc), S(r), h;
+                  return this.complete(r.completion, r.afterLoc), j(r), h;
               }
             },
             catch: function (t) {
@@ -16422,7 +16435,7 @@
                   var n = r.completion;
                   if ("throw" === n.type) {
                     var o = n.arg;
-                    S(r);
+                    j(r);
                   }
                   return o;
                 }
@@ -16431,7 +16444,7 @@
             },
             delegateYield: function (t, e, r) {
               return (
-                (this.delegate = { iterator: j(t), resultName: e, nextLoc: r }),
+                (this.delegate = { iterator: _(t), resultName: e, nextLoc: r }),
                 "next" === this.method && (this.arg = void 0),
                 h
               );
@@ -16521,4 +16534,4 @@
   [[47, 2, 1]],
 ]);
 
-// v1.0.0
+// v1.0.1
