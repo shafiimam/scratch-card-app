@@ -15519,7 +15519,7 @@
         function l(t, e, r, o) {
           var i = e && e.prototype instanceof f ? e : f,
             a = Object.create(i.prototype),
-            c = new S(o || []);
+            c = new _(o || []);
           return n(a, "_invoke", { value: L(t, r, c) }), a;
         }
         function s(t, e, r) {
@@ -15668,11 +15668,11 @@
             2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])),
             this.tryEntries.push(e);
         }
-        function _(t) {
+        function S(t) {
           var e = t.completion || {};
           (e.type = "normal"), delete e.arg, (t.completion = e);
         }
-        function S(t) {
+        function _(t) {
           (this.tryEntries = [{ tryLoc: "root" }]),
             t.forEach(O, this),
             this.reset(!0);
@@ -15759,8 +15759,8 @@
             );
           }),
           (t.values = j),
-          (S.prototype = {
-            constructor: S,
+          (_.prototype = {
+            constructor: _,
             reset: function (t) {
               if (
                 ((this.prev = 0),
@@ -15770,7 +15770,7 @@
                 (this.delegate = null),
                 (this.method = "next"),
                 (this.arg = void 0),
-                this.tryEntries.forEach(_),
+                this.tryEntries.forEach(S),
                 !t)
               )
                 for (var e in this)
@@ -15860,7 +15860,7 @@
               for (var e = this.tryEntries.length - 1; e >= 0; --e) {
                 var r = this.tryEntries[e];
                 if (r.finallyLoc === t)
-                  return this.complete(r.completion, r.afterLoc), _(r), h;
+                  return this.complete(r.completion, r.afterLoc), S(r), h;
               }
             },
             catch: function (t) {
@@ -15870,7 +15870,7 @@
                   var n = r.completion;
                   if ("throw" === n.type) {
                     var o = n.arg;
-                    _(r);
+                    S(r);
                   }
                   return o;
                 }
@@ -15903,7 +15903,15 @@
         (null !== m && void 0 !== m) ||
           localStorage.setItem("currentSessionScratchCardCode", g);
         var w = y[Number(m)],
-          x = (function () {
+          x = localStorage.getItem("productHandle"),
+          b = v["product-selection"],
+          L = v["selected-products"],
+          E = !0;
+        "selected-products" === b &&
+          (E = L.some(function (t) {
+            return t.handle === x;
+          }));
+        var O = (function () {
             var t = Object(n.a)(
               p().mark(function t() {
                 return p().wrap(function (t) {
@@ -15931,93 +15939,99 @@
               return t.apply(this, arguments);
             };
           })(),
-          b = v["border-color"],
-          L = v["bg-color"],
-          E = v.height,
-          O = v.width,
-          _ = v["text-color"],
-          S = v["border-radius"],
-          j = v["border-width"],
-          C = v["font-size"],
-          k = v["bg-image-link"];
-        return i.a.createElement(
-          "div",
-          { className: "App" },
-          i.a.createElement(
-            l.a,
-            {
-              sx: {
-                marginTop: "10px",
-                marginBottom: "10px",
-                width: "".concat(O, "px"),
-                height: "".concat(E, "px"),
-                ".ScratchCard__Canvas ": {
-                  borderRadius: "".concat(S - 4, "px"),
-                  margin: 0,
-                  padding: 0,
-                  height: "100%",
-                  width: "100%",
-                  zIndex: 1,
-                },
-                ".ScratchCard__Container": {
-                  border: "".concat(j, "px solid ").concat(b),
-                  borderRadius: "".concat(S, "px"),
-                },
-              },
-            },
-            i.a.createElement(
-              f.b,
-              {
-                width: O,
-                height: E,
-                image: k,
-                finishPercent: 80,
-                onComplete: function () {
-                  var t = document.querySelector(".ScratchCard__Result");
-                  (t.style.position = "relative"), (t.style.zIndex = 10);
-                },
-                customBrush: f.a,
-                brushSize: 20,
-              },
+          S = v["border-color"],
+          _ = v["bg-color"],
+          j = v.height,
+          C = v.width,
+          k = v["text-color"],
+          N = v["border-radius"],
+          I = v["border-width"],
+          P = v["font-size"],
+          G = v["bg-image-link"],
+          A = null;
+        return (
+          E &&
+            (console.log("widget will show"),
+            (A = i.a.createElement(
+              "div",
+              { className: "App" },
               i.a.createElement(
-                "div",
+                l.a,
                 {
-                  style: {
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "100%",
-                    height: "100%",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: L,
-                    borderRadius: "".concat(S - 4, "px"),
+                  sx: {
+                    marginTop: "10px",
+                    marginBottom: "10px",
+                    width: "".concat(C, "px"),
+                    height: "".concat(j, "px"),
+                    ".ScratchCard__Canvas ": {
+                      borderRadius: "".concat(N - 4, "px"),
+                      margin: 0,
+                      padding: 0,
+                      height: "100%",
+                      width: "100%",
+                      zIndex: 1,
+                    },
+                    ".ScratchCard__Container": {
+                      border: "".concat(I, "px solid ").concat(S),
+                      borderRadius: "".concat(N, "px"),
+                    },
                   },
                 },
                 i.a.createElement(
-                  s.a,
+                  f.b,
                   {
-                    variant: "h6",
-                    sx: { fontSize: "".concat(C, "px"), color: _ },
-                  },
-                  w
-                ),
-                i.a.createElement(
-                  h.a,
-                  {
-                    variant: "text",
-                    sx: {
-                      color: _,
-                      borderRadius: 0,
-                      "&:hover": { bgcolor: b },
+                    width: C,
+                    height: j,
+                    image: G,
+                    finishPercent: 80,
+                    onComplete: function () {
+                      var t = document.querySelector(".ScratchCard__Result");
+                      (t.style.position = "relative"), (t.style.zIndex = 10);
                     },
-                    disabled: r,
-                    onClick: x,
+                    customBrush: f.a,
+                    brushSize: 20,
                   },
-                  r ? "Applied On Checkout" : "Apply Discount"
+                  i.a.createElement(
+                    "div",
+                    {
+                      style: {
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "100%",
+                        height: "100%",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: _,
+                        borderRadius: "".concat(N - 4, "px"),
+                      },
+                    },
+                    i.a.createElement(
+                      s.a,
+                      {
+                        variant: "h6",
+                        sx: { fontSize: "".concat(P, "px"), color: k },
+                      },
+                      w
+                    ),
+                    i.a.createElement(
+                      h.a,
+                      {
+                        variant: "text",
+                        sx: {
+                          color: k,
+                          borderRadius: 0,
+                          "&:hover": { bgcolor: S },
+                        },
+                        disabled: r,
+                        onClick: O,
+                      },
+                      r ? "Applied On Checkout" : "Apply Discount"
+                    )
+                  )
                 )
               )
-            )
-          )
+            ))),
+          i.a.createElement(i.a.Fragment, null, A)
         );
       };
       function v() {
@@ -16057,7 +16071,7 @@
         function l(t, e, r, o) {
           var i = e && e.prototype instanceof f ? e : f,
             a = Object.create(i.prototype),
-            c = new S(o || []);
+            c = new _(o || []);
           return n(a, "_invoke", { value: L(t, r, c) }), a;
         }
         function s(t, e, r) {
@@ -16206,11 +16220,11 @@
             2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])),
             this.tryEntries.push(e);
         }
-        function _(t) {
+        function S(t) {
           var e = t.completion || {};
           (e.type = "normal"), delete e.arg, (t.completion = e);
         }
-        function S(t) {
+        function _(t) {
           (this.tryEntries = [{ tryLoc: "root" }]),
             t.forEach(O, this),
             this.reset(!0);
@@ -16297,8 +16311,8 @@
             );
           }),
           (t.values = j),
-          (S.prototype = {
-            constructor: S,
+          (_.prototype = {
+            constructor: _,
             reset: function (t) {
               if (
                 ((this.prev = 0),
@@ -16308,7 +16322,7 @@
                 (this.delegate = null),
                 (this.method = "next"),
                 (this.arg = void 0),
-                this.tryEntries.forEach(_),
+                this.tryEntries.forEach(S),
                 !t)
               )
                 for (var e in this)
@@ -16398,7 +16412,7 @@
               for (var e = this.tryEntries.length - 1; e >= 0; --e) {
                 var r = this.tryEntries[e];
                 if (r.finallyLoc === t)
-                  return this.complete(r.completion, r.afterLoc), _(r), h;
+                  return this.complete(r.completion, r.afterLoc), S(r), h;
               }
             },
             catch: function (t) {
@@ -16408,7 +16422,7 @@
                   var n = r.completion;
                   if ("throw" === n.type) {
                     var o = n.arg;
-                    _(r);
+                    S(r);
                   }
                   return o;
                 }
@@ -16446,7 +16460,7 @@
                       "awesome-sauce-123.myshopify.com",
                       (t.next = 5),
                       fetch(
-                        "http://localhost:5434/public/shopConfig?shop=".concat(
+                        "http://localhost:1465/public/shopConfig?shop=".concat(
                           "awesome-sauce-123.myshopify.com"
                         )
                       ).then(function (t) {
@@ -16506,3 +16520,5 @@
   },
   [[47, 2, 1]],
 ]);
+
+// v1.0.0
