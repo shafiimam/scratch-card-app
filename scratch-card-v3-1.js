@@ -15505,8 +15505,8 @@
         s = r(84),
         h = r(85),
         f = r(82),
-        d = r(29),
-        p = function (t) {
+        p = r(29),
+        d = function (t) {
           switch (t) {
             case "regular":
               return { fontWeight: "500" };
@@ -15572,8 +15572,8 @@
         t.wrap = l;
         var h = {};
         function f() {}
-        function d() {}
         function p() {}
+        function d() {}
         var y = {};
         u(y, i, function () {
           return this;
@@ -15581,7 +15581,7 @@
         var g = Object.getPrototypeOf,
           m = g && g(g(_([])));
         m && m !== e && r.call(m, i) && (y = m);
-        var w = (p.prototype = f.prototype = Object.create(y));
+        var w = (d.prototype = f.prototype = Object.create(y));
         function b(t) {
           ["next", "throw", "return"].forEach(function (e) {
             u(t, e, function (t) {
@@ -15738,22 +15738,22 @@
           return { value: void 0, done: !0 };
         }
         return (
-          (d.prototype = p),
-          n(w, "constructor", { value: p, configurable: !0 }),
-          n(p, "constructor", { value: d, configurable: !0 }),
-          (d.displayName = u(p, c, "GeneratorFunction")),
+          (p.prototype = d),
+          n(w, "constructor", { value: d, configurable: !0 }),
+          n(d, "constructor", { value: p, configurable: !0 }),
+          (p.displayName = u(d, c, "GeneratorFunction")),
           (t.isGeneratorFunction = function (t) {
             var e = "function" == typeof t && t.constructor;
             return (
               !!e &&
-              (e === d || "GeneratorFunction" === (e.displayName || e.name))
+              (e === p || "GeneratorFunction" === (e.displayName || e.name))
             );
           }),
           (t.mark = function (t) {
             return (
               Object.setPrototypeOf
-                ? Object.setPrototypeOf(t, p)
-                : ((t.__proto__ = p), u(t, c, "GeneratorFunction")),
+                ? Object.setPrototypeOf(t, d)
+                : ((t.__proto__ = d), u(t, c, "GeneratorFunction")),
               (t.prototype = Object.create(w)),
               t
             );
@@ -16028,44 +16028,45 @@
           z = x["border-width"],
           D = x["font-size"],
           W = (x["bg-image-link"], x["selected-title-font-style"]),
-          J = (x["title-font-size"], x["title-text-align-center"]),
-          M =
-            (x["sub-title"],
-            x["sub-title-font-size"],
-            x["sub-title-text-align-center"]),
-          Y = x["selected-sub-title-font-style"],
-          B = x["selected-scratch-card-style"],
-          H = x.title,
-          q = x["sub-title"];
+          J = x["title-font-size"],
+          M = x["title-text-align-center"],
+          Y = (x["sub-title"], x["sub-title-font-size"]),
+          B = x["sub-title-text-align-center"],
+          H = x["selected-sub-title-font-style"],
+          q = x["selected-scratch-card-style"],
+          K = x.title,
+          Q = x["sub-title"];
         console.log("\ud83d\ude80 ~ file: App.js:68 ~ App ~ shopConfig", x);
-        var K = p(W),
-          Q = p(Y),
-          U = null;
+        var U = d(W),
+          V = d(H),
+          X = null;
         return (
           N &&
             (console.log("widget will show"),
-            (U = i.a.createElement(
+            (X = i.a.createElement(
               "div",
               { className: "scratch-card-app" },
               i.a.createElement(
                 s.a,
                 {
-                  sx: Object(u.a)({}, K, {
+                  sx: Object(u.a)({}, U, {
                     width: "100%",
-                    textAlign: J && "center",
+                    fontSize: "".concat(J, "px"),
+                    textAlign: M && "center",
                   }),
                 },
-                H
+                K
               ),
               i.a.createElement(
                 s.a,
                 {
-                  sx: Object(u.a)({}, Q, {
+                  sx: Object(u.a)({}, V, {
                     width: "100%",
-                    textAlign: M && "center",
+                    fontSize: "".concat(Y, "px"),
+                    textAlign: B && "center",
                   }),
                 },
-                q
+                Q
               ),
               i.a.createElement(
                 h.a,
@@ -16091,13 +16092,13 @@
                   ref: I,
                 },
                 i.a.createElement(
-                  d.b,
+                  p.b,
                   {
                     width: g,
                     height: G,
                     image:
                       "https://cdn.jsdelivr.net/gh/shafiimam/scratch-card-app/scratch-card-styles/".concat(
-                        B.split(" ").join("-"),
+                        q.split(" ").join("-"),
                         ".png"
                       ),
                     finishPercent: 80,
@@ -16105,7 +16106,7 @@
                       var t = document.querySelector(".ScratchCard__Result");
                       (t.style.position = "relative"), (t.style.zIndex = 10);
                     },
-                    customBrush: d.a,
+                    customBrush: p.a,
                     brushSize: 50,
                   },
                   i.a.createElement(
@@ -16144,7 +16145,7 @@
                 )
               )
             ))),
-          i.a.createElement(i.a.Fragment, null, U)
+          i.a.createElement(i.a.Fragment, null, X)
         );
       };
       function g() {
@@ -16197,8 +16198,8 @@
         t.wrap = l;
         var h = {};
         function f() {}
-        function d() {}
         function p() {}
+        function d() {}
         var v = {};
         u(v, i, function () {
           return this;
@@ -16206,7 +16207,7 @@
         var y = Object.getPrototypeOf,
           m = y && y(y(_([])));
         m && m !== e && r.call(m, i) && (v = m);
-        var w = (p.prototype = f.prototype = Object.create(v));
+        var w = (d.prototype = f.prototype = Object.create(v));
         function b(t) {
           ["next", "throw", "return"].forEach(function (e) {
             u(t, e, function (t) {
@@ -16363,22 +16364,22 @@
           return { value: void 0, done: !0 };
         }
         return (
-          (d.prototype = p),
-          n(w, "constructor", { value: p, configurable: !0 }),
-          n(p, "constructor", { value: d, configurable: !0 }),
-          (d.displayName = u(p, c, "GeneratorFunction")),
+          (p.prototype = d),
+          n(w, "constructor", { value: d, configurable: !0 }),
+          n(d, "constructor", { value: p, configurable: !0 }),
+          (p.displayName = u(d, c, "GeneratorFunction")),
           (t.isGeneratorFunction = function (t) {
             var e = "function" == typeof t && t.constructor;
             return (
               !!e &&
-              (e === d || "GeneratorFunction" === (e.displayName || e.name))
+              (e === p || "GeneratorFunction" === (e.displayName || e.name))
             );
           }),
           (t.mark = function (t) {
             return (
               Object.setPrototypeOf
-                ? Object.setPrototypeOf(t, p)
-                : ((t.__proto__ = p), u(t, c, "GeneratorFunction")),
+                ? Object.setPrototypeOf(t, d)
+                : ((t.__proto__ = d), u(t, c, "GeneratorFunction")),
               (t.prototype = Object.create(w)),
               t
             );
@@ -16634,4 +16635,4 @@
   [[48, 2, 1]],
 ]);
 
-// v3.0
+// v3.1
