@@ -1813,41 +1813,38 @@
                 (n.isDrawing = !0), (n.lastPoint = n.getMouse(e, n.canvas));
               }),
               (n.handleMouseMove = function (e) {
-                if (n.isDrawing) {
-                  for (
-                    var t,
-                      r,
-                      i = n.getMouse(e, n.canvas),
-                      a = n.distanceBetween(n.lastPoint, i),
-                      o = n.angleBetween(n.lastPoint, i),
-                      l = 0;
-                    l < a;
-                    l++
-                  )
-                    (t = n.lastPoint ? n.lastPoint.x + Math.sin(o) * l : 0),
-                      (r = n.lastPoint ? n.lastPoint.y + Math.cos(o) * l : 0),
-                      (n.ctx.globalCompositeOperation = "destination-out"),
-                      n.brushImage && n.props.customBrush
-                        ? n.ctx.drawImage(
-                            n.brushImage,
-                            t,
-                            r,
-                            n.props.customBrush.width,
-                            n.props.customBrush.height
-                          )
-                        : (n.ctx.beginPath(),
-                          n.ctx.arc(
-                            t,
-                            r,
-                            n.props.brushSize || 20,
-                            0,
-                            2 * Math.PI,
-                            !1
-                          ),
-                          n.ctx.fill());
-                  (n.lastPoint = i),
-                    n.handlePercentage(n.getFilledInPixels(32));
-                }
+                for (
+                  var t,
+                    r,
+                    i = n.getMouse(e, n.canvas),
+                    a = n.distanceBetween(n.lastPoint, i),
+                    o = n.angleBetween(n.lastPoint, i),
+                    l = 0;
+                  l < a;
+                  l++
+                )
+                  (t = n.lastPoint ? n.lastPoint.x + Math.sin(o) * l : 0),
+                    (r = n.lastPoint ? n.lastPoint.y + Math.cos(o) * l : 0),
+                    (n.ctx.globalCompositeOperation = "destination-out"),
+                    n.brushImage && n.props.customBrush
+                      ? n.ctx.drawImage(
+                          n.brushImage,
+                          t,
+                          r,
+                          n.props.customBrush.width,
+                          n.props.customBrush.height
+                        )
+                      : (n.ctx.beginPath(),
+                        n.ctx.arc(
+                          t,
+                          r,
+                          n.props.brushSize || 20,
+                          0,
+                          2 * Math.PI,
+                          !1
+                        ),
+                        n.ctx.fill());
+                (n.lastPoint = i), n.handlePercentage(n.getFilledInPixels(32));
               }),
               (n.handleMouseUp = function () {
                 n.isDrawing = !1;
@@ -1971,7 +1968,7 @@
                   width: this.props.width,
                   height: this.props.height,
                   onMouseDown: this.handleMouseDown,
-                  onTouchStart: this.handleMouseDown,
+                  onTouchStart: this.handleMouseMove,
                   onMouseMove: this.handleMouseMove,
                   onTouchMove: this.handleMouseMove,
                   onMouseUp: this.handleMouseUp,
