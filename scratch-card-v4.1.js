@@ -13682,7 +13682,7 @@ function Lv() {
                   },
                 }),
                 Er("div", {
-                  className: "base",
+                  className: "scratch_card_result",
                   style: {
                     display: "flex",
                     flexDirection: "column",
@@ -13895,6 +13895,7 @@ class Kc {
     t > 70 &&
       ((this.canvas.style.transition = "1s"),
       (this.canvas.style.opacity = "0"),
+      (this.canvas.style.zIndex = "0"),
       (this.isFinished = !0));
   }
   render() {
