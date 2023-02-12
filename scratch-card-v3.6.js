@@ -465,8 +465,8 @@ z.version = "18.2.0";
 (function (e) {
   e.exports = z;
 })(Jp);
-const yt = Np(S),
-  ca = bp({ __proto__: null, default: yt }, [S]);
+const Bt = Np(S),
+  ca = bp({ __proto__: null, default: Bt }, [S]);
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -508,7 +508,7 @@ Co.jsxs = Hc;
   e.exports = Co;
 })(Gp);
 const pA = Fr.Fragment,
-  se = Fr.jsx,
+  ce = Fr.jsx,
   Mi = Fr.jsxs;
 var Nl = {},
   Gl = {},
@@ -1852,11 +1852,11 @@ var Cf = Je.unstable_scheduleCallback,
   xA = Je.unstable_LowPriority,
   Rf = Je.unstable_IdlePriority,
   Vo = null,
-  wt = null;
+  yt = null;
 function OA(e) {
-  if (wt && typeof wt.onCommitFiberRoot == "function")
+  if (yt && typeof yt.onCommitFiberRoot == "function")
     try {
-      wt.onCommitFiberRoot(Vo, e, void 0, (e.current.flags & 128) === 128);
+      yt.onCommitFiberRoot(Vo, e, void 0, (e.current.flags & 128) === 128);
     } catch {}
 }
 var at = Math.clz32 ? Math.clz32 : UA,
@@ -3645,30 +3645,30 @@ function ba(e, t, n) {
     : Z(Xe),
     G(Xe, n);
 }
-var Bt = null,
+var Rt = null,
   ko = !1,
   Il = !1;
 function Yf(e) {
-  Bt === null ? (Bt = [e]) : Bt.push(e);
+  Rt === null ? (Rt = [e]) : Rt.push(e);
 }
 function Tg(e) {
   (ko = !0), Yf(e);
 }
 function tn() {
-  if (!Il && Bt !== null) {
+  if (!Il && Rt !== null) {
     Il = !0;
     var e = 0,
       t = D;
     try {
-      var n = Bt;
+      var n = Rt;
       for (D = 1; e < n.length; e++) {
         var r = n[e];
         do r = r(!0);
         while (r !== null);
       }
-      (Bt = null), (ko = !1);
+      (Rt = null), (ko = !1);
     } catch (i) {
-      throw (Bt !== null && (Bt = Bt.slice(e + 1)), Cf(rs, tn), i);
+      throw (Rt !== null && (Rt = Rt.slice(e + 1)), Cf(rs, tn), i);
     } finally {
       (D = t), (Il = !1);
     }
@@ -4584,7 +4584,7 @@ function id(e) {
 var Yn = id(!0),
   od = id(!1),
   ii = {},
-  Ct = en(ii),
+  wt = en(ii),
   Gr = en(ii),
   Jr = en(ii);
 function sn(e) {
@@ -4592,7 +4592,7 @@ function sn(e) {
   return e;
 }
 function ws(e, t) {
-  switch ((G(Jr, t), G(Gr, e), G(Ct, ii), (e = t.nodeType), e)) {
+  switch ((G(Jr, t), G(Gr, e), G(wt, ii), (e = t.nodeType), e)) {
     case 9:
     case 11:
       t = (t = t.documentElement) ? t.namespaceURI : tu(null, "");
@@ -4603,19 +4603,19 @@ function ws(e, t) {
         (e = e.tagName),
         (t = tu(t, e));
   }
-  Z(Ct), G(Ct, t);
+  Z(wt), G(wt, t);
 }
 function Hn() {
-  Z(Ct), Z(Gr), Z(Jr);
+  Z(wt), Z(Gr), Z(Jr);
 }
 function ld(e) {
   sn(Jr.current);
-  var t = sn(Ct.current),
+  var t = sn(wt.current),
     n = tu(t, e.type);
-  t !== n && (G(Gr, e), G(Ct, n));
+  t !== n && (G(Gr, e), G(wt, n));
 }
 function Cs(e) {
-  Gr.current === e && (Z(Ct), Z(Gr));
+  Gr.current === e && (Z(wt), Z(Gr));
 }
 var H = en(0);
 function co(e) {
@@ -4653,7 +4653,7 @@ var Ui = Ot.ReactCurrentDispatcher,
   An = 0,
   _ = null,
   ue = null,
-  ce = null,
+  ae = null,
   fo = !1,
   kr = !1,
   Zr = 0,
@@ -4682,7 +4682,7 @@ function Bs(e, t, n, r, i, o) {
     do {
       if (((kr = !1), (Zr = 0), 25 <= o)) throw Error(R(301));
       (o += 1),
-        (ce = ue = null),
+        (ae = ue = null),
         (t.updateQueue = null),
         (Ui.current = Zg),
         (e = n(r, i));
@@ -4692,7 +4692,7 @@ function Bs(e, t, n, r, i, o) {
     ((Ui.current = po),
     (t = ue !== null && ue.next !== null),
     (An = 0),
-    (ce = ue = _ = null),
+    (ae = ue = _ = null),
     (fo = !1),
     t)
   )
@@ -4711,15 +4711,15 @@ function At() {
     queue: null,
     next: null,
   };
-  return ce === null ? (_.memoizedState = ce = e) : (ce = ce.next = e), ce;
+  return ae === null ? (_.memoizedState = ae = e) : (ae = ae.next = e), ae;
 }
 function tt() {
   if (ue === null) {
     var e = _.alternate;
     e = e !== null ? e.memoizedState : null;
   } else e = ue.next;
-  var t = ce === null ? _.memoizedState : ce.next;
-  if (t !== null) (ce = t), (ue = e);
+  var t = ae === null ? _.memoizedState : ae.next;
+  if (t !== null) (ae = t), (ue = e);
   else {
     if (e === null) throw Error(R(310));
     (ue = e),
@@ -4730,9 +4730,9 @@ function tt() {
         queue: ue.queue,
         next: null,
       }),
-      ce === null ? (_.memoizedState = ce = e) : (ce = ce.next = e);
+      ae === null ? (_.memoizedState = ae = e) : (ae = ae.next = e);
   }
-  return ce;
+  return ae;
 }
 function Mr(e, t) {
   return typeof t == "function" ? t(e) : t;
@@ -4828,7 +4828,7 @@ function sd(e, t) {
     (o && ((r.memoizedState = i), (ze = !0)),
     (r = r.queue),
     Ss(fd.bind(null, n, r, e), [e]),
-    r.getSnapshot !== t || o || (ce !== null && ce.memoizedState.tag & 1))
+    r.getSnapshot !== t || o || (ae !== null && ae.memoizedState.tag & 1))
   ) {
     if (
       ((n.flags |= 2048),
@@ -5965,7 +5965,7 @@ qu = function () {};
 zd = function (e, t, n, r) {
   var i = e.memoizedProps;
   if (i !== r) {
-    (e = t.stateNode), sn(Ct.current);
+    (e = t.stateNode), sn(wt.current);
     var o = null;
     switch (n) {
       case "input":
@@ -6127,7 +6127,7 @@ function Hg(e, t, n) {
           if (t.stateNode === null) throw Error(R(166));
           return Ve(t), null;
         }
-        if (((e = sn(Ct.current)), Ci(t))) {
+        if (((e = sn(wt.current)), Ci(t))) {
           (r = t.stateNode), (n = t.type);
           var o = t.memoizedProps;
           switch (((r[mt] = t), (r[Nr] = o), (e = (t.mode & 1) !== 0), n)) {
@@ -6325,7 +6325,7 @@ function Hg(e, t, n) {
       if (e && t.stateNode != null) Xd(e, t, e.memoizedProps, r);
       else {
         if (typeof r != "string" && t.stateNode === null) throw Error(R(166));
-        if (((n = sn(Jr.current)), sn(Ct.current), Ci(t))) {
+        if (((n = sn(Jr.current)), sn(wt.current), Ci(t))) {
           if (
             ((r = t.stateNode),
             (n = t.memoizedProps),
@@ -6379,7 +6379,7 @@ function Hg(e, t, n) {
             r &&
             ((t.child.flags |= 8192),
             t.mode & 1 &&
-              (e === null || H.current & 1 ? ae === 0 && (ae = 3) : Os())),
+              (e === null || H.current & 1 ? se === 0 && (se = 3) : Os())),
           t.updateQueue !== null && (t.flags |= 4),
           Ve(t),
           null);
@@ -6396,7 +6396,7 @@ function Hg(e, t, n) {
       if (((r = (t.flags & 128) !== 0), (l = o.rendering), l === null))
         if (r) pr(o, !1);
         else {
-          if (ae !== 0 || (e !== null && e.flags & 128))
+          if (se !== 0 || (e !== null && e.flags & 128))
             for (e = t.child; e !== null; ) {
               if (((l = co(e)), l !== null)) {
                 for (
@@ -6780,9 +6780,9 @@ function Xt(e, t, n) {
   for (n = n.child; n !== null; ) Wd(e, t, n), (n = n.sibling);
 }
 function Wd(e, t, n) {
-  if (wt && typeof wt.onCommitFiberUnmount == "function")
+  if (yt && typeof yt.onCommitFiberUnmount == "function")
     try {
-      wt.onCommitFiberUnmount(Vo, n);
+      yt.onCommitFiberUnmount(Vo, n);
     } catch {}
   switch (n.tag) {
     case 5:
@@ -7391,7 +7391,7 @@ var nv = Math.ceil,
   he = 0,
   Le = 0,
   Tn = en(0),
-  ae = 0,
+  se = 0,
   jr = null,
   gn = 0,
   Ko = 0,
@@ -7400,7 +7400,7 @@ var nv = Math.ceil,
   Oe = null,
   Ks = 0,
   $n = 1 / 0,
-  Rt = null,
+  Vt = null,
   go = !1,
   Ou = null,
   Qt = null,
@@ -7429,7 +7429,7 @@ function ct(e, t, n, r) {
   if (50 < Ir) throw ((Ir = 0), (zu = null), Error(R(185)));
   ti(e, n, r),
     (!(X & 2) || e !== fe) &&
-      (e === fe && (!(X & 2) && (Ko |= n), ae === 4 && Lt(e, he)),
+      (e === fe && (!(X & 2) && (Ko |= n), se === 4 && Lt(e, he)),
       Te(e, r),
       n === 1 && X === 0 && !(t.mode & 1) && (($n = re() + 500), ko && tn()));
 }
@@ -7480,7 +7480,7 @@ function bd(e, t) {
     var i = X;
     X |= 2;
     var o = Gd();
-    (fe !== e || he !== t) && ((Rt = null), ($n = re() + 500), cn(e, t));
+    (fe !== e || he !== t) && ((Vt = null), ($n = re() + 500), cn(e, t));
     do
       try {
         ov();
@@ -7492,7 +7492,7 @@ function bd(e, t) {
     vs(),
       (Ao.current = o),
       (X = i),
-      oe !== null ? (t = 0) : ((fe = null), (he = 0), (t = ae));
+      oe !== null ? (t = 0) : ((fe = null), (he = 0), (t = se));
   }
   if (t !== 0) {
     if (
@@ -7515,7 +7515,7 @@ function bd(e, t) {
         case 1:
           throw Error(R(345));
         case 2:
-          rn(e, Oe, Rt);
+          rn(e, Oe, Vt);
           break;
         case 3:
           if (
@@ -7526,10 +7526,10 @@ function bd(e, t) {
               qe(), (e.pingedLanes |= e.suspendedLanes & i);
               break;
             }
-            e.timeoutHandle = vu(rn.bind(null, e, Oe, Rt), t);
+            e.timeoutHandle = vu(rn.bind(null, e, Oe, Vt), t);
             break;
           }
-          rn(e, Oe, Rt);
+          rn(e, Oe, Vt);
           break;
         case 4:
           if ((Lt(e, r), (r & 4194240) === r)) break;
@@ -7556,13 +7556,13 @@ function bd(e, t) {
                 : 1960 * nv(r / 1960)) - r),
             10 < r)
           ) {
-            e.timeoutHandle = vu(rn.bind(null, e, Oe, Rt), r);
+            e.timeoutHandle = vu(rn.bind(null, e, Oe, Vt), r);
             break;
           }
-          rn(e, Oe, Rt);
+          rn(e, Oe, Vt);
           break;
         case 5:
-          rn(e, Oe, Rt);
+          rn(e, Oe, Vt);
           break;
         default:
           throw Error(R(329));
@@ -7642,7 +7642,7 @@ function dc(e) {
   return (
     (e.finishedWork = e.current.alternate),
     (e.finishedLanes = t),
-    rn(e, Oe, Rt),
+    rn(e, Oe, Vt),
     Te(e, re()),
     null
   );
@@ -7709,7 +7709,7 @@ function cn(e, t) {
     ((fe = e),
     (oe = e = Yt(e.current, null)),
     (he = Le = t),
-    (ae = 0),
+    (se = 0),
     (jr = null),
     (Is = Ko = gn = 0),
     (Oe = qr = null),
@@ -7743,13 +7743,13 @@ function Nd(e, t) {
       }
       if (
         ((An = 0),
-        (ce = ue = _ = null),
+        (ae = ue = _ = null),
         (kr = !1),
         (Zr = 0),
         (qs.current = null),
         n === null || n.return === null)
       ) {
-        (ae = 1), (jr = t), (oe = null);
+        (se = 1), (jr = t), (oe = null);
         break;
       }
       e: {
@@ -7803,7 +7803,7 @@ function Nd(e, t) {
           }
         }
         (o = s = _n(s, u)),
-          ae !== 4 && (ae = 2),
+          se !== 4 && (se = 2),
           qr === null ? (qr = [o]) : qr.push(o),
           (o = l);
         do {
@@ -7846,14 +7846,14 @@ function Gd() {
   return (Ao.current = po), e === null ? po : e;
 }
 function Os() {
-  (ae === 0 || ae === 3 || ae === 2) && (ae = 4),
+  (se === 0 || se === 3 || se === 2) && (se = 4),
     fe === null || (!(gn & 268435455) && !(Ko & 268435455)) || Lt(fe, he);
 }
 function mo(e, t) {
   var n = X;
   X |= 2;
   var r = Gd();
-  (fe !== e || he !== t) && ((Rt = null), cn(e, t));
+  (fe !== e || he !== t) && ((Vt = null), cn(e, t));
   do
     try {
       iv();
@@ -7863,7 +7863,7 @@ function mo(e, t) {
     }
   while (1);
   if ((vs(), (X = n), (Ao.current = r), oe !== null)) throw Error(R(261));
-  return (fe = null), (he = 0), ae;
+  return (fe = null), (he = 0), se;
 }
 function iv() {
   for (; oe !== null; ) Jd(oe);
@@ -7889,7 +7889,7 @@ function Zd(e) {
       if (e !== null)
         (e.flags |= 32768), (e.subtreeFlags = 0), (e.deletions = null);
       else {
-        (ae = 6), (oe = null);
+        (se = 6), (oe = null);
         return;
       }
     } else if (((n = Hg(n, t, Le)), n !== null)) {
@@ -7902,7 +7902,7 @@ function Zd(e) {
     }
     oe = t = e;
   } while (t !== null);
-  ae === 0 && (ae = 5);
+  se === 0 && (se = 5);
 }
 function rn(e, t, n) {
   var r = D,
@@ -8083,10 +8083,10 @@ function Gn() {
             }
         }
         if (
-          ((X = i), tn(), wt && typeof wt.onPostCommitFiberRoot == "function")
+          ((X = i), tn(), yt && typeof yt.onPostCommitFiberRoot == "function")
         )
           try {
-            wt.onPostCommitFiberRoot(Vo, e);
+            yt.onPostCommitFiberRoot(Vo, e);
           } catch {}
         r = !0;
       }
@@ -8136,7 +8136,7 @@ function uv(e, t, n) {
     (e.pingedLanes |= e.suspendedLanes & n),
     fe === e &&
       (he & n) === n &&
-      (ae === 4 || (ae === 3 && (he & 130023424) === he && 500 > re() - Ks)
+      (se === 4 || (se === 3 && (he & 130023424) === he && 500 > re() - Ks)
         ? cn(e, 0)
         : (Is |= n)),
     Te(e, t);
@@ -8948,7 +8948,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u") {
   var Si = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (!Si.isDisabled && Si.supportsFiber)
     try {
-      (Vo = Si.inject(mv)), (wt = Si);
+      (Vo = Si.inject(mv)), (yt = Si);
     } catch {}
 }
 Ze.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = vv;
@@ -9581,7 +9581,7 @@ function Ge() {
     (ie = We < op ? ve(or, We++) : 0), tr++, ie === 10 && ((tr = 1), Do++), ie
   );
 }
-function Vt() {
+function Ct() {
   return ve(or, We);
 }
 function Ni() {
@@ -9632,7 +9632,7 @@ function Gi(e) {
   return ip(oi(We - 1, Lu(e === 91 ? e + 2 : e === 40 ? e + 1 : e)));
 }
 function $v(e) {
-  for (; (ie = Vt()) && ie < 33; ) Ge();
+  for (; (ie = Ct()) && ie < 33; ) Ge();
   return _r(e) > 2 || _r(ie) > 3 ? "" : " ";
 }
 function e0(e, t) {
@@ -9643,7 +9643,7 @@ function e0(e, t) {
     !(ie < 48 || ie > 102 || (ie > 57 && ie < 65) || (ie > 70 && ie < 97));
 
   );
-  return oi(e, Ni() + (t < 6 && Vt() == 32 && Ge() == 32));
+  return oi(e, Ni() + (t < 6 && Ct() == 32 && Ge() == 32));
 }
 function Lu(e) {
   for (; Ge(); )
@@ -9665,11 +9665,11 @@ function Lu(e) {
 }
 function t0(e, t) {
   for (; Ge() && e + ie !== 47 + 10; )
-    if (e + ie === 42 + 42 && Vt() === 47) break;
+    if (e + ie === 42 + 42 && Ct() === 47) break;
   return "/*" + oi(t, We - 1) + "*" + Lo(e === 47 ? e : Ge());
 }
 function n0(e) {
-  for (; !_r(Vt()); ) Ge();
+  for (; !_r(Ct()); ) Ge();
   return oi(e, We);
 }
 function r0(e) {
@@ -9716,7 +9716,7 @@ function Ji(e, t, n, r, i, o, l, u, s) {
         C += e0(Ni() - 1, 7);
         continue;
       case 47:
-        switch (Vt()) {
+        switch (Ct()) {
           case 42:
           case 47:
             Pi(i0(t0(Ge(), Ni()), t, n), s);
@@ -9790,8 +9790,8 @@ function Ji(e, t, n, r, i, o, l, u, s) {
             (u[a++] = (gt(C) - 1) * f), (f = 1);
             break;
           case 64:
-            Vt() === 45 && (C += Gi(Ge())),
-              (d = Vt()),
+            Ct() === 45 && (C += Gi(Ge())),
+              (d = Ct()),
               (g = p = gt((A = C += n0(Ni())))),
               c++;
             break;
@@ -9852,7 +9852,7 @@ function u0(e) {
 var s0 = function (t, n, r) {
     for (
       var i = 0, o = 0;
-      (i = o), (o = Vt()), i === 38 && o === 12 && (n[r] = 1), !_r(o);
+      (i = o), (o = Ct()), i === 38 && o === 12 && (n[r] = 1), !_r(o);
 
     )
       Ge();
@@ -9864,14 +9864,14 @@ var s0 = function (t, n, r) {
     do
       switch (_r(i)) {
         case 0:
-          i === 38 && Vt() === 12 && (n[r] = 1), (t[r] += s0(We - 1, n, r));
+          i === 38 && Ct() === 12 && (n[r] = 1), (t[r] += s0(We - 1, n, r));
           break;
         case 2:
           t[r] += Gi(i);
           break;
         case 4:
           if (i === 44) {
-            (t[++r] = Vt() === 58 ? "&\f" : ""), (n[r] = t[r].length);
+            (t[++r] = Ct() === 58 ? "&\f" : ""), (n[r] = t[r].length);
             break;
           }
         default:
@@ -11546,7 +11546,7 @@ function Mm(e = {}) {
       g = wp(u),
       { className: p, component: d = "div" } = g,
       y = ye(g, Zm);
-    return se(
+    return ce(
       i,
       K({ as: d, ref: s, className: xe(p, r ? r(n) : n), theme: a }, y)
     );
@@ -12245,7 +12245,7 @@ function T1(e, t) {
     (e.prototype.constructor = e),
     Nu(e, t);
 }
-const Uc = yt.createContext(null);
+const Uc = Bt.createContext(null);
 function W1(e) {
   if (e === void 0)
     throw new ReferenceError(
@@ -12402,17 +12402,17 @@ var N1 =
           delete u.enter,
           delete u.exit,
           o === null
-            ? yt.createElement(Uc.Provider, { value: s }, a)
-            : yt.createElement(
+            ? Bt.createElement(Uc.Provider, { value: s }, a)
+            : Bt.createElement(
                 Uc.Provider,
                 { value: s },
-                yt.createElement(o, u, a)
+                Bt.createElement(o, u, a)
               )
         );
       }),
       t
     );
-  })(yt.Component);
+  })(Bt.Component);
 na.propTypes = {};
 na.defaultProps = G1;
 const J1 = na;
@@ -12442,10 +12442,10 @@ function Z1(e) {
         };
       }
     }, [s, u, a]),
-    se("span", {
+    ce("span", {
       className: d,
       style: y,
-      children: se("span", { className: m }),
+      children: ce("span", { className: m }),
     })
   );
 }
@@ -12612,7 +12612,7 @@ const Gu = 550,
           } = h;
           a((P) => [
             ...P,
-            se(
+            ce(
               eh,
               {
                 classes: {
@@ -12719,10 +12719,10 @@ const Gu = 550,
         f,
         A,
       ]),
-      se(
+      ce(
         $1,
         K({ className: xe(je.root, o.root, l), ref: v }, u, {
-          children: se(J1, { component: null, exit: !0, children: s }),
+          children: ce(J1, { component: null, exit: !0, children: s }),
         })
       )
     );
@@ -12975,7 +12975,7 @@ const ih = Wo("MuiButtonBase", ["root", "disabled", "focusVisible"]),
         },
         lr,
         Se,
-        { children: [l, si ? se(nh, K({ ref: F, center: o }, le)) : null] }
+        { children: [l, si ? ce(nh, K({ ref: F, center: o }, le)) : null] }
       )
     );
   }),
@@ -13115,7 +13115,7 @@ const dh = [
       }),
       E = s || (p ? "p" : y[d] || bc[d]) || "span",
       f = ph(v);
-    return se(
+    return ce(
       Ah,
       K({ as: E, ref: n, ownerState: v, className: xe(f.root, u) }, m)
     );
@@ -13466,8 +13466,8 @@ const Vh = Wo("MuiButton", [
         variant: A,
       }),
       V = Sh(w),
-      C = f && se(Ph, { className: V.startIcon, ownerState: w, children: f }),
-      k = y && se(qh, { className: V.endIcon, ownerState: w, children: y });
+      C = f && ce(Ph, { className: V.startIcon, ownerState: w, children: f }),
+      k = y && ce(qh, { className: V.endIcon, ownerState: w, children: y });
     return Mi(
       kh,
       K(
@@ -13522,6 +13522,7 @@ var xh = (function (e) {
         }),
         (i.handleMouseMove = function (o) {
           if (i.isDrawing) {
+            console.log("moving mouse");
             for (
               var l = i.getMouse(o, i.canvas),
                 u = i.distanceBetween(i.lastPoint, l),
@@ -13662,10 +13663,10 @@ var xh = (function (e) {
             width: "100%",
             height: "100%",
           };
-        return yt.createElement(
+        return Bt.createElement(
           "div",
           { className: "ScratchCard__Container", style: o },
-          yt.createElement("canvas", {
+          Bt.createElement("canvas", {
             ref: function (a) {
               i.canvas = a;
             },
@@ -13674,13 +13675,13 @@ var xh = (function (e) {
             width: this.props.width,
             height: this.props.height,
             onMouseDown: this.handleMouseDown,
-            onTouchStart: this.handleMouseDown,
+            onTouchStart: this.handleMouseMove,
             onMouseMove: this.handleMouseMove,
             onTouchMove: this.handleMouseMove,
             onMouseUp: this.handleMouseUp,
             onTouchEnd: this.handleMouseUp,
           }),
-          yt.createElement(
+          Bt.createElement(
             "div",
             { className: "ScratchCard__Result", style: u },
             this.props.children
@@ -13809,7 +13810,7 @@ function zh() {
       (Fe = Mi("div", {
         className: "scratch-card-app",
         children: [
-          se(bl, {
+          ce(bl, {
             sx: {
               ...Ae,
               width: "100%",
@@ -13818,7 +13819,7 @@ function zh() {
             },
             children: V,
           }),
-          se(bl, {
+          ce(bl, {
             sx: {
               ...dt,
               width: "100%",
@@ -13827,7 +13828,7 @@ function zh() {
             },
             children: C,
           }),
-          se(wh, {
+          ce(wh, {
             sx: {
               marginTop: "10px",
               marginBottom: "10px",
@@ -13847,7 +13848,7 @@ function zh() {
               },
             },
             ref: F,
-            children: se(xh, {
+            children: ce(xh, {
               ref: x,
               width: n,
               height: a,
@@ -13870,12 +13871,12 @@ function zh() {
                   borderRadius: `${p - 4}px`,
                 },
                 children: [
-                  se(bl, {
+                  ce(bl, {
                     variant: "h6",
                     sx: { fontSize: `${y}px`, color: g },
                     children: le,
                   }),
-                  se(Kh, {
+                  ce(Kh, {
                     variant: "text",
                     sx: { color: g, borderRadius: 0 },
                     disabled: e,
@@ -13888,7 +13889,7 @@ function zh() {
           }),
         ],
       }))),
-    se(pA, { children: Fe })
+    ce(pA, { children: Fe })
   );
 }
 async function Xh() {
@@ -13958,7 +13959,7 @@ async function Xh() {
 }
 function Uh() {
   Nl.createRoot(document.getElementById("scratch-card-app-root")).render(
-    se(yt.StrictMode, { children: se(zh, {}) })
+    ce(zh, {})
   );
 }
 let Pp = !1;
