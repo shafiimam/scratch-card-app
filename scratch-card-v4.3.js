@@ -13677,7 +13677,8 @@ var Nv = (function (e) {
           o > i &&
             (this.props.fadeOutOnComplete !== !1 &&
               ((this.canvas.style.transition = "1s"),
-              (this.canvas.style.opacity = "0")),
+              (this.canvas.style.opacity = "0"),
+              (this.canvas.style.zIndex = "-1")),
             this.setState({ finished: !0 }),
             this.props.onComplete && this.props.onComplete(),
             (this.isFinished = !0));
@@ -13694,7 +13695,7 @@ var Nv = (function (e) {
           msUserSelect: "none",
           userSelect: "none",
         },
-        l = { position: "absolute", top: 0, zIndex: 1 },
+        l = { position: "absolute", top: 0, zIndex: 10 },
         s = {
           visibility: this.state.loaded ? "visible" : "hidden",
           width: "100%",
@@ -13875,6 +13876,7 @@ function Iv() {
                 image:
                   "https://cdn.jsdelivr.net/gh/shafiimam/scratch-card-app/scratch-card-style/style-1.png",
                 finishPercent: 80,
+                onComplete: () => {},
                 children: Go(bl, {
                   sx: {
                     display: "flex",
