@@ -14346,7 +14346,7 @@ var Fv = (function (e) {
           onMouseMove: this.handleMouseMove,
           onTouchMove: this.handleTouchMove,
           onMouseUp: this.handleMouseUp,
-          onTouchEnd: this.handleMouseUp,
+          onTouchEnd: this.handleTouchMove,
         }),
         ft.createElement(
           'div',
@@ -14542,6 +14542,8 @@ function Bv() {
                 borderRadius: `${S - 4}px`,
                 MozBorderRadius: `${S}px`,
                 overflow: 'hidden',
+                width: o,
+                height: p,
               },
             },
             children: Te(Uo, {
