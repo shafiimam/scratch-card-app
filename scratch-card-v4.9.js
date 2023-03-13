@@ -14532,23 +14532,22 @@ function Bv() {
             sx: {
               marginTop: '10px',
               marginBottom: '10px',
-              border: `${v}px solid ${a}`,
               borderRadius: `${S}px`,
-              width: `${o}px !important`,
-              height: `${p}px !important`,
               zIndex: 4,
               backgroundColor: m,
-              '.ScratchCard__Canvas': {
-                borderRadius: `${S - 4}px`,
-                MozBorderRadius: `${S}px`,
-                overflow: 'hidden',
-                width: o,
-                height: p,
-              },
             },
             children: Te(Uo, {
               className: 'ScratchCard__Container',
-              sx: { position: 'relative', height: '100%' },
+              sx: {
+                '.ScratchCard__Canvas': {
+                  borderRadius: `${S - 4}px`,
+                  MozBorderRadius: `${S}px`,
+                  overflow: 'hidden',
+                  border: `${v}px solid ${a}`,
+                  width: o,
+                  height: p,
+                },
+              },
               children: Te(Fv, {
                 width: o,
                 height: p,
@@ -14574,6 +14573,7 @@ function Bv() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: `${S - 4}px`,
+                    border: `${v}px solid ${a}`,
                   },
                   children: [
                     Te(ls, {
