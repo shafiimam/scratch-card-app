@@ -14680,7 +14680,7 @@ function V1() {
 					ze(ss, {
 						sx: {
 							...X,
-							width: '100%',
+							width: { scWidth: o },
 							fontSize: `${h}px`,
 							textAlign: y && 'center',
 							color: c,
